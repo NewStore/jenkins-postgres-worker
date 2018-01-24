@@ -5,6 +5,7 @@ USER root
 
 RUN apk add --update \
 	postgresql \
+    postgresql-dev \
     py3-virtualenv \ 
     make \
  && rm -rf /var/cache/apk/*
