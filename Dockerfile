@@ -5,7 +5,7 @@ USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	postgresql-9.6 \
-	python-pip \
+    virtualenv \
 	&& rm -rf /var/lib/apt/lists/*
 
 USER jenkins
