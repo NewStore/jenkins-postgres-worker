@@ -1,11 +1,12 @@
-FROM jenkins/jnlp-slave:3.16-1
+FROM jenkins/jnlp-slave:3.16-1-alpine
 MAINTAINER Infrastructure team <team-infrastructure@newstore.com>
 
 USER root
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-	postgresql-9.6 \
-    virtualenv \
-	&& rm -rf /var/lib/apt/lists/*
+RUN apk add --update \
+	postgresql \
+    py3-virtualenv \ 
+    make \
+ && rm -rf /var/cache/apk/*
 
 USER jenkins
