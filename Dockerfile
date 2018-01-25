@@ -12,6 +12,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositori
     py3-psycopg2 \
     build-base \
     perl \
+    findutils \
  && rm -rf /var/cache/apk/*
 
 USER jenkins
