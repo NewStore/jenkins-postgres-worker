@@ -3,12 +3,13 @@ MAINTAINER Infrastructure team <team-infrastructure@newstore.com>
 
 USER root
 
-RUN apk add --update \
-	postgresql \
-    postgresql-dev \
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositories && apk update \
+ && apk add \
+	postgresql==9.6.6-r0 \
+    postgresql-dev==9.6.6-r0 \
     py3-virtualenv \ 
+    python3-dev \
     py3-psycopg2 \
-    make \
     build-base \
  && rm -rf /var/cache/apk/*
 
