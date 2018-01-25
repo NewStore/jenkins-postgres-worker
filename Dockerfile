@@ -7,8 +7,9 @@ RUN apk add --update \
 	postgresql \
     postgresql-dev \
     py3-virtualenv \ 
-    make \
     py3-psycopg2 \
+    make \
+    build-base \
  && rm -rf /var/cache/apk/*
 
 USER jenkins
