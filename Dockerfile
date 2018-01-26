@@ -48,7 +48,7 @@ VOLUME /var/lib/postgresql/data
 
 USER jenkins
 
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh jenkins-slave
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["jenkins-slave"]
 
