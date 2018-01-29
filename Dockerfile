@@ -46,8 +46,7 @@ RUN apk update && \
     apk --purge del openssl-dev zlib-dev libxml2-dev gnupg ca-certificates && \
     rm -r /tmp/postgresql-$PG_VERSION* /var/cache/apk/*
 
-VOLUME /var/lib/postgresql/data
-
 COPY jenkins-slave /jenkins-slave
+
 
 ENTRYPOINT ["/jenkins-slave"]
