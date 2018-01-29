@@ -24,6 +24,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositori
     python3-dev \
     py3-psycopg2 \
     findutils \
+    grep \
     perl \
     wget \
     gnupg \
