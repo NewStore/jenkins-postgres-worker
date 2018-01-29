@@ -38,4 +38,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositori
     apk --purge del openssl-dev zlib-dev libxml2-dev gnupg ca-certificates && \
     rm -rf /var/cache/apk/*
 
-USER jenkins
+COPY jenkins-slave /jenkins-slave
+
+ENTRYPOINT ["/jenkins-slave"]
