@@ -15,7 +15,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositori
     zlib-dev \
     libxml2-dev \
     glib-lang \
-    py3-psycopg2 \
+    postgresql-dev \
     libpq==9.6.6-r0 \
 	postgresql==9.6.6-r0 \
     postgresql-client==9.6.6-r0 \
