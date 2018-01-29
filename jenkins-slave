@@ -168,7 +168,7 @@ EOSQL
 
         echo
 
-        #gosu postgres pg_ctl -D "$PGDATA" -m fast -w start
+        gosu postgres pg_ctl -D "$PGDATA" -m fast -w stop
         set_listen_addresses '*'
 		set_max_connections
         enable_pg_stat_statements
