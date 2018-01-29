@@ -28,6 +28,7 @@ RUN apk update && \
     build-base \
     perl \
     grep \
+    su-exec \    
     findutils && \
     gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && \
     gpg --list-keys --fingerprint --with-colons | sed -E -n -e 's/^fpr:::::::::([0-9A-F]+):$/\1:6:/p' | gpg --import-ownertrust && \
@@ -46,9 +47,6 @@ RUN apk update && \
 
 VOLUME /var/lib/postgresql/data
 
-USER jenkins
+COPY jenkins-slave /jenkins-slave
 
-COPY docker-entrypoint.sh jenkins-slave
-
-ENTRYPOINT ["jenkins-slave"]
-
+ENTRYPOINT ["/jenkins-slave"]
