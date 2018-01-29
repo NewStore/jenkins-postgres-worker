@@ -27,6 +27,7 @@ RUN apk update && \
     py3-psycopg2 \
     build-base \
     perl \
+    gcc \
     grep \
     su-exec \    
     findutils && \
@@ -42,7 +43,7 @@ RUN apk update && \
     tar xvfj /tmp/postgresql-$PG_VERSION.tar.bz2 -C /tmp && \
     cd /tmp/postgresql-$PG_VERSION && ./configure --enable-integer-datetimes --enable-thread-safety --prefix=/usr/local --with-libedit-preferred --with-openssl  && make world && make install world && make -C contrib install && \
     cd /tmp/postgresql-$PG_VERSION/contrib && make && make install && \
-    apk --purge del build-base openssl-dev zlib-dev libxml2-dev wget gnupg ca-certificates && \
+    apk --purge del openssl-dev zlib-dev libxml2-dev gnupg ca-certificates && \
     rm -r /tmp/postgresql-$PG_VERSION* /var/cache/apk/*
 
 VOLUME /var/lib/postgresql/data
