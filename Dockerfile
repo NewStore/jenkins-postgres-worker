@@ -2,7 +2,7 @@ FROM jenkins/jnlp-slave:3.16-1-alpine
 MAINTAINER Infrastructure team <team-infrastructure@newstore.com>
 
 ENV PG_MAJOR 10
-ENV PG_VERSION 10.0
+ENV PG_VERSION 10.6
 
 ENV PATH /usr/lib/postgresql/$PG_MAJOR/bin:$PATH
 ENV PGDATA /var/lib/postgresql/data
